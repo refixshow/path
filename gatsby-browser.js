@@ -1,3 +1,6 @@
+import 'firebase/auth';
+import 'firebase/firestore';
+import 'firebase/functions';
 /**
  * Implement Gatsby's Browser APIs in this file.
  *

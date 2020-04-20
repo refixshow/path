@@ -1,21 +1,39 @@
-import React from "react"
-import { Link } from "gatsby"
+import React from 'react';
 
-import Layout from "../components/layout"
-import Image from "../components/image"
-import SEO from "../components/seo"
+import MainTemplate from '../components/templates/MainTemplate';
+import Aside from '../components/atoms/selectors/Aside';
+import Main from '../components/atoms/selectors/Main';
+import Hero from '../components/organisms/Hero';
 
-const IndexPage = () => (
-  <Layout>
-    <SEO title="Home" />
-    <h1>Hi people</h1>
-    <p>Welcome to your new Gatsby site.</p>
-    <p>Now go build something great.</p>
-    <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
-      <Image />
-    </div>
-    <Link to="/page-2/">Go to page 2</Link>
-  </Layout>
-)
+const IndexPage = () => {
+  console.log('SIEMANO');
+  console.log('SIEMANO');
+  console.log('SIEMANO');
+  console.log('SIEMANO');
+  console.log('SIEMANO');
+  return (
+    <MainTemplate>
+      <Aside>
+        <div>Logo</div>
+        <div>socials</div>
+      </Aside>
+      <Main>
+        <Hero />
+      </Main>
+      <Aside right>
+        <div>resume</div>
+        <nav>
+          <ul>
+            <li>start</li>
+            <li>about</li>
+            <li>projects</li>
+            <li>contact</li>
+          </ul>
+        </nav>
+        <div>email</div>
+      </Aside>
+    </MainTemplate>
+  );
+};
 
-export default IndexPage
+export default IndexPage;
