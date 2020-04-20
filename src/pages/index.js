@@ -7,10 +7,6 @@ import Hero from '../components/organisms/Hero';
 
 const IndexPage = () => {
   console.log('SIEMANO');
-  console.log('SIEMANO');
-  console.log('SIEMANO');
-  console.log('SIEMANO');
-  console.log('SIEMANO');
   return (
     <MainTemplate>
       <Aside>

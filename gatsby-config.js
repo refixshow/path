@@ -18,14 +18,15 @@ module.exports = {
     },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
-    {
-      resolve: 'gatsby-plugin-offline',
-      options: {
-        workboxConfig: {
-          globPatterns: ['**/*'],
-        },
-      },
-    },
+    `gatsby-plugin-remove-serviceworker`,
+    // {
+    //   resolve: 'gatsby-plugin-offline',
+    //   options: {
+    //     workboxConfig: {
+    //       globPatterns: ['**/*'],
+    //     },
+    //   },
+    // },
     {
       resolve: `gatsby-source-datocms`,
       options: {
