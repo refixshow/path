@@ -8,6 +8,8 @@ import Section from '../atoms/selectors/Section';
 import P from '../atoms/selectors/P';
 import H1 from '../atoms/selectors/H1';
 
+console.log(process.env.TAK);
+
 const Container = styled(Section)`
   display: flex;
   justify-content: center;

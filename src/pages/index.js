@@ -6,7 +6,6 @@ import Main from '../components/atoms/selectors/Main';
 import Hero from '../components/organisms/Hero';
 
 const IndexPage = () => {
-  console.log('SIEMANO');
   return (
     <MainTemplate>
       <Aside>
