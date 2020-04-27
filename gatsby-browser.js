@@ -8,3 +8,4 @@ import 'firebase/functions';
  */
 
 // You can delete this file if you're not using it
+export { wrapRootElement } from './src/apollo/wrap-root-element';
