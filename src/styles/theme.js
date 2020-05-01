@@ -4,8 +4,8 @@ export const theme = {
     primaryDark: '#172A45',
     greenLight: '#64FFDA',
     greyLight: '#CCD6F6',
-    grey: '#707070',
-    greyDark: '#4e4e4e',
+    grey: '#485461',
+    greyDark: '#28313b',
   },
   fontWeight: {
     thin: 300,

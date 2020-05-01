@@ -30,7 +30,7 @@ const MainTemplate = ({ children }) => {
       <Wrapper>
         <SocialAside />
         {children}
-        <NavAside toggleNav={toggleNav} />
+        <NavAside isOpen={isOpen} toggleNav={toggleNav} />
       </Wrapper>
     </ThemeProvider>
   );

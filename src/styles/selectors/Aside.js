@@ -5,7 +5,7 @@ const Aside = styled.aside`
   position: absolute;
   display: flex;
   justify-content: space-between;
-  padding: 3rem 4rem;
+  padding: 2.1rem 4rem;
 
   &:first-child {
     box-shadow: 0 10px 10px #000000;

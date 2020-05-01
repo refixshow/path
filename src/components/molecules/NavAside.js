@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useRef } from 'react';
+import gsap from 'gsap';
 import styled from 'styled-components';
 
 import Aside from '../../styles/selectors/Aside';
@@ -11,36 +12,48 @@ const Container = styled(Aside)`
 `;
 
 const Hamburger = styled.div`
-  position: relative;
-  width: 15px;
-  height: 2px;
-  background-color: ${({ theme }) => theme.colors.greenLight};
-
-  &::before,
-  &::after {
-    content: '';
-    position: absolute;
+  & div {
+    width: 14px;
     height: 2px;
-    background-color: inherit;
-    left: 0;
-  }
+    background-color: ${({ theme }) => theme.colors.greenLight};
 
-  &::before {
-    top: -6px;
-    width: 30px;
-  }
+    &:first-child {
+      width: 25px;
+    }
 
-  &::after {
-    top: 6px;
-    width: 20px;
+    &:last-child {
+      width: 20px;
+    }
+
+    &:not(:first-child) {
+      margin-top: 3px;
+    }
   }
 `;
 
-const NavAside = ({ toggleNav }) => {
+const NavAside = ({ isOpen, toggleNav }) => {
+  const ref = useRef(null);
+  const ref1 = useRef(null);
+  const ref2 = useRef(null);
+
+  if (isOpen) {
+    gsap.to(ref.current, 0.3, { rotate: 45, x: 0, y: 5, width: 20 });
+    gsap.to(ref1.current, 0.3, { x: 100, opacity: 0 });
+    gsap.to(ref2.current, 0.3, { rotate: -45, y: -5 });
+  } else {
+    gsap.to(ref.current, 0.3, { rotate: 0, x: 0, y: 0, width: 25 });
+    gsap.to(ref1.current, 0.3, { x: 0, opacity: 1 });
+    gsap.to(ref2.current, 0.3, { rotate: 0, y: 0 });
+  }
+
   return (
     <Container>
       <Button callback={toggleNav}>
-        <Hamburger />
+        <Hamburger isOpen={isOpen}>
+          <div ref={ref}></div>
+          <div ref={ref1}></div>
+          <div ref={ref2}></div>
+        </Hamburger>
       </Button>
       <div>home</div>
       <div>resume</div>

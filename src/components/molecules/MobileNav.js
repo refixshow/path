@@ -5,23 +5,27 @@ import gsap from 'gsap';
 const Container = styled.div`
   position: fixed;
   top: 0;
-  left: -100%;
-  background-color: red;
+  left: 0;
+  transform: translateX(-100%);
   height: 100vh;
-  width: 100vw;
-
+  width: 60vw;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+
+  background-color: ${({ theme }) => theme.colors.grey};
+  background-image: ${({ theme }) =>
+    `linear-gradient(315deg, ${theme.colors.grey} 0%, ${theme.colors.greyDark} 74%)`};
 `;
 
 const Nav = styled.nav``;
 
 const MobileNav = () => {
   const ref = useRef(null);
+
   useEffect(() => {
-    gsap.to(ref.current, { x: '100%', duration: 1, ease: 'power3.in' });
+    gsap.to(ref.current, { x: '0', duration: 0.4, ease: 'power2.in' });
   }, []);
 
   return (
