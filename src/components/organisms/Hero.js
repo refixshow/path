@@ -12,7 +12,18 @@ const Container = styled.section`
 const Hero = () => {
   return (
     <Container id="hero">
-      <h1>kinga kozakiem</h1>
+      <div>
+        <div>
+          <p>Hi, my name is</p>
+          <h1>Adam Ście'sz'ka [Pa't'h].</h1>
+          <h1>I build aweosome websites.</h1>
+        </div>
+        <p>
+          I'm a software engineer based in Oleśnica, specializing in buiding
+          high-quality websites and web applications.
+        </p>
+        <button>Get In Touch</button>
+      </div>
     </Container>
   );
 };

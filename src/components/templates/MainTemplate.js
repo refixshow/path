@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import styled, { ThemeProvider } from 'styled-components';
+import styled, { ThemeProvider, css } from 'styled-components';
 
 import GlobalStyle from '../../styles/GlobalStyle';
 import { theme } from '../../styles/theme';
@@ -15,6 +15,8 @@ const Wrapper = styled.main`
   & section {
     grid-column: center-start / center-end;
   }
+
+  padding-bottom: 9rem;
 `;
 
 const MainTemplate = ({ children }) => {
@@ -26,7 +28,7 @@ const MainTemplate = ({ children }) => {
   return (
     <ThemeProvider theme={theme}>
       <GlobalStyle />
-      {isOpen && <MobileNav />}
+      {isOpen && <MobileNav toggleNav={toggleNav} isOpen={isOpen} />}
       <Wrapper>
         <SocialAside />
         {children}

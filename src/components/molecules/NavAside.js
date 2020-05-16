@@ -9,7 +9,7 @@ import Button from '../atoms/Button';
 const Container = styled(Aside)`
   position: fixed;
   bottom: 0;
-  background-color: ${({ theme }) => theme.colors.primaryDark};
+  background-color: ${({ theme }) => theme.colors.primaryLight};
 `;
 
 const Hamburger = styled.div`
