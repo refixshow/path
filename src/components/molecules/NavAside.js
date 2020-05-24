@@ -7,6 +7,7 @@ import Aside from '../../styles/selectors/Aside';
 import Button from '../atoms/Button';
 
 const Container = styled(Aside)`
+  position: relative;
   position: fixed;
   bottom: 0;
   background-color: ${({ theme }) => theme.colors.primaryLight};
@@ -14,6 +15,7 @@ const Container = styled(Aside)`
 
 const Hamburger = styled.div`
   width: 25px;
+
   & div {
     width: 50%;
     height: 2px;
@@ -31,6 +33,24 @@ const Hamburger = styled.div`
       margin-top: 3px;
     }
   }
+`;
+
+const StyledLink = styled(Link)`
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 60px;
+  width: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  border-radius: 50%;
+  text-decoration: none;
+
+  border: 2px solid ${({ theme }) => theme.colors.greyLight};
+  background-color: ${({ theme }) => theme.colors.primary};
 `;
 
 const NavAside = ({ isOpen, toggleNav }) => {
@@ -57,10 +77,28 @@ const NavAside = ({ isOpen, toggleNav }) => {
           <div ref={ref2}></div>
         </Hamburger>
       </Button>
-      <Button>
-        <Link to="/#">home</Link>
-      </Button>
-      <div>resume</div>
+      <StyledLink
+        to="/"
+        onClick={() => {
+          if (isOpen) toggleNav();
+        }}
+        onMouseOver={e => {
+          gsap.to(e.target, 0.1, { scale: 1.1 });
+        }}
+        onMouseLeave={e => {
+          gsap.to(e.target, 0.1, { scale: 1 });
+        }}
+      >
+        PA'T'H
+      </StyledLink>
+      <Link
+        to="/"
+        onClick={() => {
+          if (isOpen) toggleNav();
+        }}
+      >
+        resume
+      </Link>
     </Container>
   );
 };

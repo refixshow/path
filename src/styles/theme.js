@@ -1,5 +1,6 @@
 export const theme = {
   colors: {
+    blueLight: '#537895',
     primary: '#021645',
     primaryLight: '#172A45',
     greenLight: '#64FFDA',
@@ -9,7 +10,7 @@ export const theme = {
   },
   fontWeight: {
     thin: 300,
-    regular: 300,
+    regular: 700,
     bold: 800,
   },
   fontSizes: {

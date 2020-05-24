@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useRef, useEffect } from 'react';
 import styled, { css } from 'styled-components';
 import gsap from 'gsap';
 import { Link } from 'gatsby';
@@ -29,11 +29,11 @@ const Nav = styled.nav`
 
   height: 100%;
   background-image: ${({ theme }) =>
-    `linear-gradient(315deg, ${theme.colors.grey} 0%, ${theme.colors.greyDark} 73%)`};
+    `linear-gradient(315deg, #000 0%, ${theme.colors.blueLight} 53%)`};
 
   & a {
     display: flex;
-    transform: translateX(-20px);
+    transform: translateX(-60px);
     width: 40%;
     padding: 15px 10px;
     margin: 7px 0;
@@ -66,32 +66,72 @@ const MobileNav = ({ toggleNav, isOpen }) => {
   `;
 
   useEffect(() => {
-    gsap.to(containerRef.current, { x: '0', duration: 0.4, ease: 'power2.in' });
-    gsap.to(linkRef1.current, {
-      x: '0',
-      duration: 0.4,
-      delay: 0.15,
-      ease: 'power4.in',
-    });
-    gsap.to(linkRef2.current, {
-      x: '0',
-      duration: 0.4,
-      delay: 0.2,
-      ease: 'power4.in',
-    });
-    gsap.to(linkRef3.current, {
-      x: '0',
-      duration: 0.4,
-      delay: 0.25,
-      ease: 'power4.in',
-    });
-    gsap.to(linkRef4.current, {
-      x: '0',
-      duration: 0.4,
-      delay: 0.3,
-      ease: 'power4.in',
-    });
-  }, []);
+    if (isOpen) {
+      // container
+      gsap.to(containerRef.current, {
+        x: '0',
+        duration: 0.4,
+        ease: 'power2.in',
+      });
+
+      //links
+      gsap.to(linkRef1.current, {
+        x: '0',
+        duration: 0.4,
+        delay: 0.15,
+        ease: 'power4.in',
+      });
+      gsap.to(linkRef2.current, {
+        x: '0',
+        duration: 0.4,
+        delay: 0.2,
+        ease: 'power4.in',
+      });
+      gsap.to(linkRef3.current, {
+        x: '0',
+        duration: 0.4,
+        delay: 0.25,
+        ease: 'power4.in',
+      });
+      gsap.to(linkRef4.current, {
+        x: '0',
+        duration: 0.4,
+        delay: 0.3,
+        ease: 'power4.in',
+      });
+    } else {
+      gsap.to(containerRef.current, {
+        x: '-100%',
+        duration: 0.4,
+        delay: 0.4,
+        ease: 'power2.in',
+      });
+      gsap.to(linkRef1.current, {
+        x: '-60',
+        duration: 0.4,
+        delay: 0.15,
+        ease: 'power4.in',
+      });
+      gsap.to(linkRef2.current, {
+        x: '-60',
+        duration: 0.4,
+        delay: 0.2,
+        ease: 'power4.in',
+      });
+      gsap.to(linkRef3.current, {
+        x: '-60',
+        duration: 0.4,
+        delay: 0.25,
+        ease: 'power4.in',
+      });
+      gsap.to(linkRef4.current, {
+        x: '-60',
+        duration: 0.4,
+        delay: 0.3,
+        ease: 'power4.in',
+      });
+    }
+  }, [isOpen]);
 
   return (
     <Container ref={containerRef}>

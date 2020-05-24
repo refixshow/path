@@ -28,7 +28,7 @@ const MainTemplate = ({ children }) => {
   return (
     <ThemeProvider theme={theme}>
       <GlobalStyle />
-      {isOpen && <MobileNav toggleNav={toggleNav} isOpen={isOpen} />}
+      <MobileNav toggleNav={toggleNav} isOpen={isOpen} />
       <Wrapper>
         <SocialAside />
         {children}
